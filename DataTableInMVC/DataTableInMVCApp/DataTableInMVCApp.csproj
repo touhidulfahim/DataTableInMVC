@@ -279,6 +279,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataTableInMVC.Data\DataTableInMVC.Data.csproj">
+      <Project>{085a9810-56c2-4d82-9351-3969a58319c2}</Project>
+      <Name>DataTableInMVC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataTableInMVC.Models\DataTableInMVC.Models.csproj">
+      <Project>{e56bd6e3-d76a-4f88-9841-603899dfeb2f}</Project>
+      <Name>DataTableInMVC.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

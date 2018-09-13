@@ -10,7 +10,7 @@ namespace DataTableInMVC.Data
 {
     public class DatabaseContext:DbContext
     {
-        public DatabaseContext() : base("name=DatabaseConnection")
+        public DatabaseContext() : base("DatabaseConnection")
         {
 
         }
