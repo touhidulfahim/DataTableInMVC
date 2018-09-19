@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table id="courseDate" class="display">
+
+    <thead>
+        <tr>
+            <th>CODE</th>
+            <th>NAME</th>
+            <th>DEPARTMENT</th>
+            <th>SEMESTER</th>
+
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>CODE</th>
+            <th>NAME</th>
+            <th>DEPARTMENT</th>
+            <th>SEMESTER</th>
+        </tr>
+    </tfoot>
+</table>
+
+@section Scripts{
+
+    <script>
+    $(document).ready(function () {
+
+        $("#courseDate").DataTable(
+            {
+                "ajax": {
+                    "url": "/Course/GetCourseList",
+                    "type": "GET",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "CourseCode" },
+                    { "data": "CourseName" },
+                    { "data": "Department.DepartmentName" },
+                    { "data": "Semester" }
+                ]
+
+            });
+
+    });
+    </script>
+
+}

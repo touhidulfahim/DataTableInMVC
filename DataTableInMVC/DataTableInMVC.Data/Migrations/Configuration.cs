@@ -5,14 +5,14 @@ namespace DataTableInMVC.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DataTableInMVC.Data.DatabaseContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataTableInMVC.Data.AppDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(DataTableInMVC.Data.DatabaseContext context)
+        protected override void Seed(DataTableInMVC.Data.AppDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

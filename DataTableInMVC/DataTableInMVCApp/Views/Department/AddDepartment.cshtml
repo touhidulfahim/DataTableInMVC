@@ -1,0 +1,51 @@
+﻿@model DataTableInMVC.Models.Department
+
+
+@using (Ajax.BeginForm("AddDepartment", "Department", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "div-record", OnSuccess = "$('.close').click()" }, new { @id = "saveForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="form-group">
+    @Html.LabelFor(model => model.DepartmentCode,"CODE", htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(model => model.DepartmentCode, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.DepartmentCode, "", new { @class = "text-danger" })
+    
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.DepartmentName,"NAME", htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(model => model.DepartmentName, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.DepartmentName, "", new { @class = "text-danger" })
+</div>
+
+    <div class="modal-footer">
+        <input type="submit" value="SAVE DEPARTMENT" class="btn btn-primary btn-block" name="cmd" />
+    </div>
+}
+@*<script>
+        {  
+        // add options  
+        zIndex: 100,  
+        url: "/Department/AddDepartment",  
+        closeOnEscape: true,  
+        closeAfterAdd: true,  
+        afterComplete: function (response) {  
+            if (response.responseJSON)  
+            {  
+                if (response.responseJSON == "Saved Successfully") {  
+                    alert("Saved Successfully");  
+                }  
+                else {  
+                    var message = "";  
+                    for (var i = 0; i < response.responseJSON.length; i++) {  
+                        message += response.responseJSON[i];  
+                        message += "\n";  
+                    }  
+                }  
+                  
+            }  
+        }  
+    }  
+
+</script>*@
